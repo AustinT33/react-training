@@ -1,9 +1,11 @@
 import React from 'react';
-import TodoListItem from './TodoListItem';
-import './TodoList.css'
+import TodoListItem from '../TodoListItem/TodoListItem';
+import NewTodoForm from '../NewTodoForm/NewTodoForm';
+import './TodoList.css';
 
-const TodoList = ({ todos }) => (
+const TodoList = ({ todos = [{ text: 'hello' }] }) => (
     <div className="list-wrapper">
+    <NewTodoForm />
         {todos.map(todo => <TodoListItem todo={todo} />)}
     </div>
 );
