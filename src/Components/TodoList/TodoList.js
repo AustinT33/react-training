@@ -5,17 +5,17 @@ import NewTodoForm from '../NewTodoForm/NewTodoForm';
 import { removeTodo } from '../../Redux/actions';
 import './TodoList.css';
 
-const TodoList = ({ todos = [{ text: 'hello' }] }) => (
+const TodoList = ({ todos = [], onRemovePressed }) => (
     <div className="list-wrapper">
     <NewTodoForm />
-        {todos.map(todo => <TodoListItem todo={todo} />)}
+        {todos.map(todo => <TodoListItem todo={todo} onRemovePressed={onRemovePressed} />)}
     </div>
 );
 
 const mapStateToProps = state => ({
     todos: state.todos,
 });
-const mapDispatchToProps = dispatch ({
+const mapDispatchToProps = dispatch => ({
     onRemovePressed: text => dispatch(removeTodo(text)),
 });
 
