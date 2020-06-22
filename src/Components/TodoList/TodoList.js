@@ -2,9 +2,8 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import TodoListItem from '../TodoListItem/TodoListItem';
 import NewTodoForm from '../NewTodoForm/NewTodoForm';
-import { loadTodos } from '../../Redux/thunks';
 import { removeTodo, markTodoAsCompleted } from '../../Redux/actions';
-import { displayAlert } from '../../Redux/thunks';
+import { displayAlert, loadTodos } from '../../Redux/thunks';
 import './TodoList.css';
 
 const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, startLoadingTodos }) => {
