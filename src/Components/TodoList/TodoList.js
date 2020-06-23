@@ -15,7 +15,8 @@ const TodoList = ({ todos = [], onRemovePressed, onCompletedPressed, isLoading, 
     const content = (
         <div className="list-wrapper">
         <NewTodoForm />
-        {todos.map(todo => <TodoListItem 
+        {todos.map((todo, index) => <TodoListItem 
+            key={index}
             todo={todo} 
             onRemovePressed={onRemovePressed} 
             onCompletedPressed={onCompletedPressed} />)}
