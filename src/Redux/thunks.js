@@ -49,7 +49,7 @@ export const removeTodoRequest = id => async dispatch => {
     }
 }
 
-export const markTodoAsCompletedRequest = id = async dispatch => {
+export const markTodoAsCompletedRequest = id => async dispatch => {
     try {
         const res = await fetch(`http://localhost:8080/todos/${id}/completed`, {
             method: 'post'
